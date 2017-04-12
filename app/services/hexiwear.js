@@ -322,6 +322,7 @@ var Hexiwear = function () {
                         .then(function (value) {
                             /* Parsing characteristic readout */
                             self.healthData.calorie = value.getUint16(0);
+                            self.healthData.calorie = self.healthData.calorie/256;
                             self.updateUI();
                         });
                 })
